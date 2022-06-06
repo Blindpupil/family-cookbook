@@ -1,9 +1,6 @@
-# Family Cookbook
-
-An application to share recipes with your loved ones.
-
-This project showcases my takes on domain driven architecture in the frontend.
-
+# Family Cookbook _(Example of domain driven architecture in the frontend)_
+The idea is that Family Cookbook is an application to share recipes with your loved ones. 
+The reality is that this project only showcases some of my takes on domain driven architecture in the frontend.
 
 ## Recommended IDE Setup
 
@@ -35,7 +32,7 @@ npm install
 ```sh
 npm run dev
 ```
-
+(Don't run it though. There's nothing to run really, it's just example code')
 ### Type-Check, Compile and Minify for Production
 
 ```sh
@@ -47,7 +44,7 @@ npm run build
 ```sh
 npm run test:unit
 ```
-
+TODO: write example tests
 ### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
 
 ```sh
