@@ -1,6 +1,7 @@
 # Family Cookbook _(Example of domain driven architecture in the frontend)_
 The idea is that Family Cookbook is an application to share recipes with your loved ones. 
 The reality is that this project only showcases some of my takes on domain driven architecture in the frontend.
+Read [more about it here](https://betterprogramming.pub/domain-driven-architecture-in-the-frontend-i-d27fb71b5cb0) or [here] (https://dev.to/blindpupil/domain-driven-architecture-in-the-frontend-i-1f41)
 
 ## Recommended IDE Setup
 
