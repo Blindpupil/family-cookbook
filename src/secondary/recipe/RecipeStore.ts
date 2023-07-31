@@ -13,5 +13,4 @@ export const useRecipeStore = defineStore({
   },
 });
 
-const definedStore = useRecipeStore();
-export type RecipeStore = typeof definedStore;
+export type RecipeStore = ReturnType<typeof useRecipeStore>;

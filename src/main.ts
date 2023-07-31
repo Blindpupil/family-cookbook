@@ -11,8 +11,14 @@ import { useRecipeStore } from "@/secondary/recipe/RecipeStore";
 import { RecipeService } from "@/primary/recipe/use-cases";
 import { UserResource } from "@/secondary/user/UserResource";
 
-// Services
+// Setup
+const app = createApp(App);
 const pinia = createPinia();
+
+app.use(pinia);
+app.use(router);
+
+// Services
 const restClient = new RestClient();
 
 const userResource = new UserResource();
@@ -21,11 +27,6 @@ const recipeStore = useRecipeStore();
 const recipeResource = new RecipeResource(restClient, recipeStore);
 const recipeService = new RecipeService(recipeResource, userResource);
 
-// Setup
-const app = createApp(App);
-
-app.use(pinia);
-app.use(router);
 app.provide("recipeService", recipeService);
 
 app.mount("#app");
