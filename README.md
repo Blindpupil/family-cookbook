@@ -1,15 +1,14 @@
-# Family Cookbook _(Example of domain driven architecture in the frontend)_
-The idea is that Family Cookbook is an application to share recipes with your loved ones. 
-The reality is that this project only showcases some of my takes on domain driven architecture in the frontend.
-Read [more about it here](https://betterprogramming.pub/domain-driven-architecture-in-the-frontend-i-d27fb71b5cb0) or [here](https://dev.to/blindpupil/domain-driven-architecture-in-the-frontend-i-1f41)
+# vue-project
+
+This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
 ## Type Support for `.vue` Imports in TS
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
 If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
@@ -25,36 +24,48 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ## Project Setup
 
 ```sh
-npm install
+pnpm install
 ```
 
 ### Compile and Hot-Reload for Development
 
 ```sh
-npm run dev
+pnpm dev
 ```
-(Don't run it though. There's nothing to run really, it's just example code')
+
 ### Type-Check, Compile and Minify for Production
 
 ```sh
-npm run build
+pnpm build
 ```
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
-npm run test:unit
+pnpm test:unit
 ```
-TODO: write example tests
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+
+### Run End-to-End Tests with [Playwright](https://playwright.dev)
 
 ```sh
-npm run build
-npm run test:e2e # or `npm run test:e2e:ci` for headless testing
+# Install browsers for the first run
+npx playwright install
+
+# When testing on CI, must build the project first
+pnpm build
+
+# Runs the end-to-end tests
+pnpm test:e2e
+# Runs the tests only on Chromium
+pnpm test:e2e --project=chromium
+# Runs the tests of a specific file
+pnpm test:e2e tests/example.spec.ts
+# Runs the tests in debug mode
+pnpm test:e2e --debug
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
-npm run lint
+pnpm lint
 ```

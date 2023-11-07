@@ -5,5 +5,4 @@ export type IngredientProperties = {
   name: string;
   quantity: number;
   unit: Unit;
-  updatedAt: Date;
 };

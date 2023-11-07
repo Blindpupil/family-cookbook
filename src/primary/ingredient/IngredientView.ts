@@ -7,18 +7,11 @@ export class IngredientView {
     public readonly name: string,
     public readonly quantity: number,
     public readonly unit: Unit,
-    public readonly updatedAt: string
   ) {}
 
-  fromDomain(ingredient: Ingredient): IngredientView {
-    const { id, name, quantity, unit, updatedAt } = ingredient.properties;
+  static fromDomain(ingredient: Ingredient): IngredientView {
+    const { id, name, quantity, unit } = ingredient.properties;
 
-    return new IngredientView(
-      id,
-      name,
-      quantity,
-      unit,
-      updatedAt.toLocaleDateString()
-    );
+    return new IngredientView(id, name, quantity, unit);
   }
 }

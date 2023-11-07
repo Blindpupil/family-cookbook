@@ -1,5 +1,5 @@
 export class RestClient {
-  private base = import.meta.env.REST_API_ENDPOINT;
+  private base = import.meta.env.VITE_REST_API_ENDPOINT;
 
   async get<ResponseType>(url: string): Promise<ResponseType> {
     const response = await fetch(`${this.base}/${url}`);
@@ -8,10 +8,11 @@ export class RestClient {
 
   async post<ResponseType, DataType>(
     url: string,
-    data: DataType
+    data: DataType,
   ): Promise<ResponseType> {
     const response = await fetch(url, {
       method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
     return await response.json();
@@ -19,16 +20,22 @@ export class RestClient {
 
   async patch<ResponseType, DataType>(
     url: string,
-    data: DataType
+    data: DataType,
   ): Promise<ResponseType> {
     const response = await fetch(url, {
       method: "PATCH",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
     return await response.json();
   }
 
   async delete(url: string): Promise<void> {
-    await fetch(url, { method: "DELETE" });
+    await fetch(url, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }
+
+export const restClient = new RestClient();

@@ -1,20 +1,20 @@
-import { Unit } from "@/domain/ingredient/enums";
 import type { IngredientProperties } from "@/domain/ingredient/types";
+import { Unit } from "@/domain/ingredient/enums";
 import { InvalidUnitForConversionException } from "@/domain/ingredient/exceptions/InvalidUnitForConversionException";
 import { OUNCE_IN_GRAMS } from "@/domain/ingredient/constants";
 
 export class Ingredient {
+  // Made domain properties public to showcase _classic.vue files. Should be private
   private constructor(
-    private readonly id: string,
-    private readonly name: string,
-    private quantity: number,
-    private unit: Unit,
-    private readonly updatedAt: Date
+    public readonly id: string,
+    public readonly name: string,
+    public quantity: number,
+    public unit: Unit,
   ) {}
 
   static fromProperties(properties: IngredientProperties): Ingredient {
-    const { id, name, quantity, unit, updatedAt } = properties;
-    return new Ingredient(id, name, quantity, unit, updatedAt);
+    const { id, name, quantity, unit } = properties;
+    return new Ingredient(id, name, quantity, unit);
   }
 
   get properties(): IngredientProperties {
@@ -23,7 +23,6 @@ export class Ingredient {
       name: this.name,
       quantity: this.quantity,
       unit: this.unit,
-      updatedAt: this.updatedAt,
     };
   }
 
@@ -32,7 +31,7 @@ export class Ingredient {
       throw new InvalidUnitForConversionException(
         this.unit,
         Unit.oz,
-        this.changeGramsToOunces.name
+        this.changeGramsToOunces.name,
       );
     }
 
@@ -47,7 +46,7 @@ export class Ingredient {
       throw new InvalidUnitForConversionException(
         this.unit,
         Unit.g,
-        this.changeOuncesToGrams.name
+        this.changeOuncesToGrams.name,
       );
     }
 

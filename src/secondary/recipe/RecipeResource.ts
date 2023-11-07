@@ -1,59 +1,55 @@
 import type { RecipeRepository } from "@/domain/recipe/repository/RecipeRepository";
 import type { UserId } from "@/domain/user/types";
 import type { RecipeId, RecipeToSave } from "@/domain/recipe/types";
-import type { ApiRecipe } from "@/secondary/recipe/ApiRecipe";
-import type { RestClient } from "@/secondary/RestClient";
-import type { RecipeStore } from "@/secondary/recipe/RecipeStore";
 import { Recipe } from "@/domain/recipe/Recipe";
 
-export class RecipeResource implements RecipeRepository {
-  constructor(
-    private readonly restClient: RestClient,
-    private readonly store: RecipeStore
-  ) {}
+import type { RecipeHttp } from "@/secondary/recipe/RecipeHttp";
+import type { RecipeProperties } from "@/domain/recipe/types";
+import { useRecipeStore } from "@/secondary/recipe/RecipeStore";
 
-  async getRecipes(userId: UserId): Promise<Recipe[]> {
+export class RecipeResource implements RecipeRepository {
+  constructor(private readonly recipeHttp: RecipeHttp) {}
+
+  get store() {
+    return useRecipeStore();
+  }
+
+  async getRecipes(): Promise<Recipe[]> {
     const recipesInStore = this.store.recipes;
     if (recipesInStore.length !== 0) {
       return recipesInStore.map(Recipe.fromProperties);
     }
 
-    const apiRecipes = await this.restClient.get<ApiRecipe[]>(
-      `/users/${userId}/recipes`
-    );
-    const recipes = apiRecipes.map((apiRecipe) => apiRecipe.toDomain());
+    const recipes = await this.recipeHttp.getRecipes();
+
     this.store.saveRecipes(recipes.map((recipe) => recipe.properties));
 
     return recipes;
   }
 
   async getFavoriteRecipes(userId: UserId): Promise<Recipe[]> {
-    const apiRecipes = await this.restClient.get<ApiRecipe[]>(
-      `/users/${userId}/recipes?favorites=true`
-    );
-
-    return apiRecipes.map((apiRecipe) => apiRecipe.toDomain());
+    return await this.recipeHttp.getFavoriteRecipes(userId);
   }
 
   async createRecipe(userId: UserId, form: RecipeToSave): Promise<Recipe> {
-    const apiRecipe = await this.restClient.post<ApiRecipe, RecipeToSave>(
-      `/users/${userId}/recipes`,
-      form
-    );
+    const recipe = await this.recipeHttp.createRecipe(userId, form);
 
-    return apiRecipe.toDomain();
+    this.store.addRecipe(recipe.properties);
+
+    return recipe;
   }
 
-  async updateRecipe(recipeId: RecipeId, form: RecipeToSave): Promise<Recipe> {
-    const apiRecipe = await this.restClient.post<ApiRecipe, RecipeToSave>(
-      `/recipes/${recipeId}`,
-      form
-    );
+  async updateRecipe(form: RecipeProperties): Promise<Recipe> {
+    const recipe = await this.recipeHttp.patchRecipe(form);
 
-    return apiRecipe.toDomain();
+    this.store.updateRecipe(recipe.properties);
+
+    return recipe;
   }
 
   async deleteRecipe(recipeId: RecipeId): Promise<void> {
-    await this.restClient.delete(`/recipes/${recipeId}`);
+    await this.recipeHttp.deleteRecipe(recipeId);
+
+    this.store.removeRecipe(recipeId);
   }
 }

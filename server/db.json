@@ -1,0 +1,259 @@
+{
+  "ingredients": [
+    {
+      "id": 1,
+      "name": "Onion"
+    },
+    {
+      "id": 2,
+      "name": "Red Bell Pepper"
+    },
+    {
+      "id": 3,
+      "name": "Tomato"
+    },
+    {
+      "id": 4,
+      "name": "Egg"
+    },
+    {
+      "id": 5,
+      "name": "Ground Beef"
+    },
+    {
+      "id": 6,
+      "name": "Chicken"
+    },
+    {
+      "id": 7,
+      "name": "Heavy Cream"
+    },
+    {
+      "id": 8,
+      "name": "Parmesan Cheese"
+    },
+    {
+      "id": 9,
+      "name": "Fettuccine Pasta"
+    },
+    {
+      "id": 10,
+      "name": "Minced Garlic"
+    },
+    {
+      "id": 11,
+      "name": "Carrots"
+    },
+    {
+      "id": 12,
+      "name": "Broccoli"
+    },
+    {
+      "id": 13,
+      "name": "Bell Pepper"
+    },
+    {
+      "id": 14,
+      "name": "Soy Sauce"
+    },
+    {
+      "id": 15,
+      "name": "Oyster Sauce"
+    },
+    {
+      "id": 16,
+      "name": "Ginger"
+    },
+    {
+      "id": 17,
+      "name": "Garlic"
+    },
+    {
+      "id": 18,
+      "name": "Butter"
+    },
+    {
+      "id": 19,
+      "name": "White Sugar"
+    },
+    {
+      "id": 20,
+      "name": "Brown Sugar"
+    },
+    {
+      "id": 21,
+      "name": "Vanilla Extract"
+    },
+    {
+      "id": 22,
+      "name": "Baking Soda"
+    }
+  ],
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Piperade",
+      "ingredients": [
+        {
+          "id": 1,
+          "quantity": 2,
+          "unit": ""
+        },
+        {
+          "id": 2,
+          "quantity": 2,
+          "unit": ""
+        },
+        {
+          "id": 3,
+          "quantity": 4,
+          "unit": ""
+        },
+        {
+          "id": 4,
+          "quantity": 4,
+          "unit": ""
+        }
+      ],
+      "instructions": "Peel tomatoes. Dice onions. Dice the red bell peppers. Slice the chorizo. Stir-fry the onions. Add the peeled tomatoes. Add the red bell peppers. Add the chorizo. Add the eggs and mix. Serve with bread. Enjoy!",
+      "portions": 2,
+      "updatedAt": "2023-11-07T18:41:41.395Z"
+    },
+    {
+      "id": 2,
+      "name": "Spaghetti Bolognese",
+      "ingredients": [
+        {
+          "id": 3,
+          "quantity": 5,
+          "unit": ""
+        },
+        {
+          "id": 2,
+          "quantity": 6,
+          "unit": ""
+        },
+        {
+          "id": 5,
+          "quantity": 500,
+          "unit": "g"
+        }
+      ],
+      "instructions": "Boil water and cook spaghetti. In a separate pan, brown ground beef. Add onions and garlic. Pour in canned tomatoes. Simmer and season with salt and pepper. Serve the sauce over cooked spaghetti.",
+      "portions": 6,
+      "updatedAt": "2023-11-07T19:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Chicken Alfredo",
+      "ingredients": [
+        {
+          "id": 6,
+          "quantity": 2,
+          "unit": ""
+        },
+        {
+          "id": 7,
+          "quantity": 300,
+          "unit": "g"
+        },
+        {
+          "id": 8,
+          "quantity": 200,
+          "unit": "g"
+        },
+        {
+          "id": 9,
+          "quantity": 1,
+          "unit": "cup"
+        },
+        {
+          "id": 10,
+          "quantity": 1,
+          "unit": "cup"
+        }
+      ],
+      "instructions": "Cook fettuccine pasta until al dente. In a pan, sauté chicken pieces in butter. Add minced garlic, heavy cream, and Parmesan cheese. Simmer until the sauce thickens. Serve over cooked fettuccine.",
+      "portions": 4,
+      "updatedAt": "2023-11-07T19:15:00.000Z"
+    },
+    {
+      "id": 4,
+      "name": "Vegetable Stir-Fry",
+      "ingredients": [
+        {
+          "id": 11,
+          "quantity": 2,
+          "unit": ""
+        },
+        {
+          "id": 12,
+          "quantity": 1,
+          "unit": ""
+        },
+        {
+          "id": 13,
+          "quantity": 1,
+          "unit": ""
+        },
+        {
+          "id": 14,
+          "quantity": 150,
+          "unit": "g"
+        },
+        {
+          "id": 15,
+          "quantity": 150,
+          "unit": "g"
+        },
+        {
+          "id": 16,
+          "quantity": 2,
+          "unit": "tbsp"
+        },
+        {
+          "id": 17,
+          "quantity": 2,
+          "unit": "tbsp"
+        }
+      ],
+      "instructions": "Cut vegetables into bite-sized pieces. Heat oil in a wok. Stir-fry vegetables, ginger, and garlic. Add soy sauce and oyster sauce. Serve hot.",
+      "portions": 3,
+      "updatedAt": "2023-11-07T19:30:00.000Z"
+    },
+    {
+      "id": 5,
+      "name": "Chocolate Chip Cookies",
+      "ingredients": [
+        {
+          "id": 18,
+          "quantity": 2,
+          "unit": "cup"
+        },
+        {
+          "id": 19,
+          "quantity": 1,
+          "unit": "cup"
+        },
+        {
+          "id": 20,
+          "quantity": 2,
+          "unit": ""
+        },
+        {
+          "id": 21,
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "id": 22,
+          "quantity": 1,
+          "unit": "tsp"
+        }
+      ],
+      "instructions": "Preheat the oven to 350°F (175°C). In a bowl, cream together butter, white sugar, and brown sugar. Beat in eggs one at a time, then stir in vanilla. Combine flour, baking soda, and salt. Stir in chocolate chips. Drop dough by rounded tablespoons onto ungreased baking sheets. Bake for 10-12 minutes or until edges are golden brown.",
+      "portions": 1,
+      "updatedAt": "2023-11-07T19:45:00.000Z"
+    }
+  ]
+}

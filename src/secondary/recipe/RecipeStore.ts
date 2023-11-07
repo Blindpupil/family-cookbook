@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import type { RecipeProperties } from "@/domain/recipe/types";
+import type { RecipeId, RecipeProperties } from "@/domain/recipe/types";
 
 export const useRecipeStore = defineStore({
   id: "recipe",
@@ -10,8 +10,17 @@ export const useRecipeStore = defineStore({
     saveRecipes(recipes: RecipeProperties[]) {
       this.recipes = recipes;
     },
+    addRecipe(recipe: RecipeProperties) {
+      this.recipes.push(recipe);
+    },
+    updateRecipe(recipe: RecipeProperties) {
+      const index = this.recipes.findIndex((r) => r.id === recipe.id);
+      this.recipes[index] = recipe;
+    },
+    removeRecipe(recipeId: RecipeId) {
+      this.recipes = this.recipes.filter((recipe) => recipe.id !== recipeId);
+    },
   },
 });
 
-const definedStore = useRecipeStore();
-export type RecipeStore = typeof definedStore;
+export type RecipeStore = ReturnType<typeof useRecipeStore>;
