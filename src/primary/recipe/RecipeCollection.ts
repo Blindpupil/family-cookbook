@@ -34,11 +34,15 @@ export class RecipeCollection {
   get isMultiselectable() {
     return this._multiselect;
   }
-  // Only selectedLast remains 'selected' when turning off multiselect
+  /**
+   * Sets the multiselect state.
+   * When setting false, selectedLast remains 'selected'
+   */
   set isMultiselectable(value) {
-    if (!value && this.selectedLast) {
+    const shouldClear = !value && this.selectedLast?.isSelected;
+    if (shouldClear) {
       this.clear();
-      this.select(this.selectedLast.id);
+      this.select(this.selectedLast!.id);
     }
     this._multiselect = value;
   }

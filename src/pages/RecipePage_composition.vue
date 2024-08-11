@@ -5,13 +5,13 @@
     <div>
       <input v-model="term" type="text" class="search" placeholder="Search" />
     </div>
-    <!--    <button class="clear" :disabled="!isClearable" @click="clear()">-->
-    <!--      Clear-->
-    <!--    </button>-->
-    <!--    <label>-->
-    <!--      Multiselect-->
-    <!--      <input v-model="isMultiselectable" type="checkbox" />-->
-    <!--    </label>-->
+    <button class="clear" :disabled="!isClearable" @click="clear()">
+      Clear
+    </button>
+    <label>
+      Multiselect
+      <input v-model="isMultiselectable" type="checkbox" />
+    </label>
   </div>
 
   <div class="grid" v-if="recipes.length">

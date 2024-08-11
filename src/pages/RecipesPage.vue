@@ -5,17 +5,17 @@
     <div v-if="collection">
       <input v-model="term" type="text" class="search" placeholder="Search" />
     </div>
-    <!--    <button-->
-    <!--      class="clear"-->
-    <!--      :disabled="!collection.isClearable"-->
-    <!--      @click="collection.clear()"-->
-    <!--    >-->
-    <!--      Clear-->
-    <!--    </button>-->
-    <!--    <label>-->
-    <!--      Multiselect-->
-    <!--      <input v-model="collection.isMultiselectable" type="checkbox" />-->
-    <!--    </label>-->
+    <button
+      class="clear"
+      :disabled="!collection.isClearable"
+      @click="collection.clear()"
+    >
+      Clear
+    </button>
+    <label>
+      Multiselect
+      <input v-model="collection.isMultiselectable" type="checkbox" />
+    </label>
   </div>
 
   <div class="grid" v-if="collection?.items?.length">
@@ -24,8 +24,8 @@
       class="recipe"
       :recipe="recipe"
       :key="recipe.id"
+      @click="collection.select(recipe.id)"
     />
-    <!-- @click="collection.select(recipe.id)"-->
   </div>
 
   <div v-else>

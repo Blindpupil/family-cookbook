@@ -1,10 +1,10 @@
 import type { RecipeRepository } from "@/domain/recipe/repository/RecipeRepository";
 import type { UserId } from "@/domain/user/types";
 import type { RecipeId, RecipeToSave } from "@/domain/recipe/types";
+import type { RecipeProperties } from "@/domain/recipe/types";
 import { Recipe } from "@/domain/recipe/Recipe";
 
 import type { RecipeHttp } from "@/secondary/recipe/RecipeHttp";
-import type { RecipeProperties } from "@/domain/recipe/types";
 import { useRecipeStore } from "@/secondary/recipe/RecipeStore";
 
 export class RecipeResource implements RecipeRepository {

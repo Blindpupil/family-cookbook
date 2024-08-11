@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ selected: recipe.isSelected }" @click="recipe.toggle()">
+  <div :class="{ selected: recipe.isSelected }">
     <h2 class="header">{{ recipe.name }}</h2>
     <sub>
       Serves {{ recipe.portions }} <span>{{ recipe.mealSizeIcon }}</span>
