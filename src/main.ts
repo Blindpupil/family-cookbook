@@ -5,7 +5,10 @@ import App from "./App.vue";
 import router from "./app-router";
 
 // Services
-import { recipeService, RecipeServiceKey } from "@/services/recipeService";
+import {
+  recipeService,
+  RecipeServiceKey,
+} from "@/hexagon/services/recipeService";
 
 // Setup
 const app = createApp(App);

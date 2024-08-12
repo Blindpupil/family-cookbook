@@ -3,7 +3,7 @@
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Recipes</RouterLink>
-        <RouterLink to="/classic">Classic</RouterLink>
+        <!--        <RouterLink to="/classic">Classic</RouterLink>-->
         <RouterLink to="/composition">Composition</RouterLink>
       </nav>
     </div>
