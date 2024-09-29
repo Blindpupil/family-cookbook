@@ -9,7 +9,7 @@ export class ApiIngredient {
 
   toDomain(recipeIngredient: RecipeIngredientProperties): Ingredient {
     return Ingredient.fromProperties({
-      id: String(this.id),
+      id: this.id,
       name: this.name,
       quantity: recipeIngredient.quantity,
       unit: recipeIngredient.unit,

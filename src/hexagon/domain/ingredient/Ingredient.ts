@@ -4,7 +4,6 @@ import { InvalidUnitForConversionException } from "@/hexagon/domain/ingredient/e
 import { OUNCE_IN_GRAMS } from "@/hexagon/domain/ingredient/constants";
 
 export class Ingredient {
-  // Make domain properties public to showcase _classic.vue files.
   private constructor(
     private readonly id: number,
     private readonly name: string,

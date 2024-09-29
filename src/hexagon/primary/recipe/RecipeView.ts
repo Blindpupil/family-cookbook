@@ -1,9 +1,8 @@
-import type { Recipe } from "@/hexagon/domain/recipe/Recipe";
-import type { RecipeId } from "@/hexagon/domain/recipe/types";
-import type { Ingredient } from "@/hexagon/domain/ingredient/Ingredient";
+import type { RecipeId, RecipeProperties } from "@/hexagon/domain/recipe/types";
 
 import { IngredientView } from "@/hexagon/primary/ingredient/IngredientView";
 import { EMOJIS } from "@/hexagon/primary/recipe/constants";
+import type { IngredientProperties } from "@/hexagon/domain/ingredient/types";
 
 export class RecipeView {
   private constructor(
@@ -17,9 +16,12 @@ export class RecipeView {
 
   public isSelected = false;
 
-  static fromDomain(recipe: Recipe, ingredients: Ingredient[]) {
-    const { id, name, instructions, portions, updatedAt } = recipe.properties;
-    const ingredientViews = ingredients.map(IngredientView.fromDomain);
+  static fromProperties(
+    recipe: RecipeProperties,
+    ingredients: IngredientProperties[],
+  ) {
+    const { id, name, instructions, portions, updatedAt } = recipe;
+    const ingredientViews = ingredients.map(IngredientView.fromProperties);
 
     return new RecipeView(
       id,

@@ -1,6 +1,15 @@
-# vue-project
+# Family Cookbook (Example of domain driven architecture in the frontend)
 
-This template should help get you started developing with Vue 3 in Vite.
+This project showcases some of my takes on domain driven architecture in the frontend. Read more about it [here](https://betterprogramming.pub/domain-driven-architecture-in-the-frontend-i-d27fb71b5cb0) 
+or [here](https://dev.to/blindpupil/domain-driven-architecture-in-the-frontend-i-1f41).
+"Family Cookbook" represents an application to share recipes with your loved ones.
+
+## Classic vs Hexagon implementation
+Under  `src/classic` you will find an example implementation of the app using the classic architecture we usually find across 
+most Vue apps. 
+
+Under `src/hexagon` is the same application using most of the ideas of Hexagonal Domain Driven Design.
+
 
 ## Recommended IDE Setup
 

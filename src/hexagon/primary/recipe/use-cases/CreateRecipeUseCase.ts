@@ -19,6 +19,6 @@ export class CreateRecipeUseCase {
       Ingredient.fromProperties,
     );
 
-    return RecipeView.fromDomain(recipe, ingredients);
+    return RecipeView.fromProperties(recipe, ingredients);
   }
 }

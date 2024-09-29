@@ -1,5 +1,5 @@
 import type { Unit } from "@/hexagon/domain/ingredient/enums";
-import type { Ingredient } from "@/hexagon/domain/ingredient/Ingredient";
+import type { IngredientProperties } from "@/hexagon/domain/ingredient/types";
 
 export class IngredientView {
   private constructor(
@@ -9,9 +9,9 @@ export class IngredientView {
     public readonly unit: Unit,
   ) {}
 
-  static fromDomain(ingredient: Ingredient): IngredientView {
-    const { id, name, quantity, unit } = ingredient.properties;
+  static fromProperties(ingredient: IngredientProperties): IngredientView {
+    const { id, name, quantity, unit } = ingredient;
 
-    return new IngredientView(id, name, quantity, unit);
+    return new IngredientView(String(id), name, quantity, unit);
   }
 }

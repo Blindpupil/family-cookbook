@@ -2,7 +2,6 @@ import type { RecipeId, RecipeProperties } from "@/hexagon/domain/recipe/types";
 import { Ingredient } from "@/hexagon/domain/ingredient/Ingredient";
 
 export class Recipe {
-  // Make domain properties public to showcase _classic.vue files
   private constructor(
     private readonly id: RecipeId,
     private readonly name: string,

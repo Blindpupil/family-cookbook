@@ -1,5 +1,4 @@
-import type { UserId } from "@/hexagon/domain/user/types";
-import type { User } from "@/hexagon/domain/user/User";
+import type { UserId, UserProperties } from "@/hexagon/domain/user/types";
 
 export class UserView {
   private constructor(
@@ -7,8 +6,8 @@ export class UserView {
     public readonly name: string,
   ) {}
 
-  static fromDomain(user: User) {
-    const { id, name } = user.properties;
+  static fromProperties(user: UserProperties) {
+    const { id, name } = user;
     return new UserView(id, name);
   }
 }
